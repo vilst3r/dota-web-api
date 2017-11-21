@@ -1,0 +1,22 @@
+{
+  "name": "dota2_web_api",
+  "version": "1.0.0",
+  "description": "JS Wrapper for the DotA 2 Web API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xbonk12/dota2_web_api.git"
+  },
+  "keywords": [
+    "dota2"
+  ],
+  "author": "Clifford Phan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xbonk12/dota2_web_api/issues"
+  },
+  "homepage": "https://github.com/xbonk12/dota2_web_api#readme"
+}
