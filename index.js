@@ -18,9 +18,9 @@ var test = new dotaWebAPI("1F72FF9BF1B0C1DF25A8CFA722DA0019")
 // test.getLiveLeagueGames()
 // .then(data => console.log(data.result.games[0]))
 
-// random guy with one game in his history
-test.getMatchHistory("vilst3r","1")
-.then(data => console.log(data))
+// get latest game from my account vilst3r 
+// test.getMatchHistory(null,null,null,null,"128432259",null,null,"1",null)
+// .then(data => console.log(data.result))
 
 
 
