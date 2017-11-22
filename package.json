@@ -11,8 +11,15 @@
     "url": "git+https://github.com/xbonk12/dota2_web_api.git"
   },
   "keywords": [
-    "dota2"
+    "dota2",
+    "web",
+    "api",
+    "steam"
   ],
+  "dependencies": {
+    "request": "~2.83.0",
+    "request-promise": "~4.2.2"
+  },
   "author": "Clifford Phan",
   "license": "MIT",
   "bugs": {
