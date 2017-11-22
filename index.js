@@ -11,8 +11,9 @@ rp("http://api.steampowered.com/ISteamApps/GetAppList/v2")
 	.then(response => JSON.parse(response))
 	.then(data => data.applist.apps.find(app => {
 		if (app.name === "Dota 2")  {
-			var test = new dotaWebAPI("key123", app.appid)
-			console.log(test.appId)
+			var test = new dotaWebAPI("1F72FF9BF1B0C1DF25A8CFA722DA0019", app.appid)
+			test.getMatchDetails("3574415631")
+			.then(data => console.log(data))
 		}
 	}))
 
