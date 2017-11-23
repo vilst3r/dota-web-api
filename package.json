@@ -1,6 +1,6 @@
 {
   "name": "dota2_web_api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JS Wrapper for the DotA 2 Web API",
   "main": "index.js",
   "scripts": {
