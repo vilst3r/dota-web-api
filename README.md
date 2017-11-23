@@ -30,6 +30,9 @@ Parameters:
   .then(data => console.log(data);
 ```
 #### Get League Listing
+Note: The function responds by default with a english description of the leagues. Use this link  https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes to find appropriate values for the parameter
+
+
 Parameters:
   - language (optional)
 ```javascript
