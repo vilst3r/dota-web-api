@@ -64,7 +64,79 @@ Parameters:
   api.getMatchHistory(parameters)
   .then(data => console.log(data);
 ```
+#### Get Match History By Sequence Number
+Parameters:
+  - startMatchSeqNum
+  - matchesRequested
+```javascript
+api.getMatchHistoryBySequenceNumber(parameters)
+ .then(data => console.log(data);
+ ```
+#### Get Team Info
+Note: At the time of testing, some teams were missing from the production db, it may not be up to date
 
 
+Parameters:
+  - startTeamId
+  - teamsRequested
+```javascript
+  api.getTeamInfo(parameters)
+  .then(data => console.log(data);
+```
+#### Get Tournament Player stats
+Note: At the time of testing, only players up to TI4 were available, it may not be up to date
+ 
+ 
+Parameters:
+  - accountId
+  - leagueId
+  - heroId
+  - timeFrame
+```javascript
+  api.getTeamInfo(parameters)
+  .then(data => console.log(data);
+```
+#### Get Items
+Parameters:
+  - lang
+```javascript
+  api.getItems(parameters)
+  .then(data => console.log(data);
+```
+#### Get Item Icon
+Note: Use getItems() to get the correct item name parameter to use this
 
 
+Parameters:
+  - name
+```javascript
+  api.getItems(parameters)
+  .then(data => {
+    var item = data.result.items[0].name;
+    api.getItems(item)
+    .then(url => console.log(url))
+  }
+```
+#### Get Heroes
+Parameters:
+  - lang
+  - ifItemized (1 or 0 value)
+```javascript
+  api.getHeroes(parameters)
+  .then(data => console.log(data);
+```
+#### Get Hero Icon
+Note: Similarly like getItemIcon(), use getHeroes() to get the correct hero name parameter to use this
+
+
+Parameters:
+  - name
+  - size (available sizes: "sb.png", "lg.png", "full.png", "vert.jpg")
+```javascript
+  api.getHeroes(parameters)
+  .then(data => {
+    var hero = data.result.heroes[0].name;
+    api.getHeroIconPath(hero, "full.png")
+    .then(url => console.log(url))
+  }
+```  
