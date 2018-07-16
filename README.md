@@ -1,4 +1,4 @@
-# dota2_web_api
+# dota2-web-api
 
 NodeJS Wrapper for the DotA 2 Web API written in ES6, - http://wiki.teamfortress.com/wiki/WebAPI#Dota_2.
 
@@ -7,14 +7,14 @@ First get your personalised API key by following this link - http://steamcommuni
 
 From terminal/shell : 
 ``` 
-npm install dota2_web_api
+npm install dota2-web-api
 ```
 
 
 In source file : 
 
 ```javascript
-  var dotaWebAPI = require('dota2_web_api');
+  var dotaWebAPI = require('dota2-web-api');
 
   var api = new dotaWebAPI(<Your Steam API key>); 
 ```
