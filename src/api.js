@@ -1,6 +1,4 @@
 import "isomorphic-fetch";
-
-import { APP_ID } from '../config/config';
 import { API_URL, MATCH_INTERFACE, ECONOMY_INTERFACE } from '../config/urls';
 
 class dotaWebAPI {
@@ -14,7 +12,7 @@ class dotaWebAPI {
 			"match_id": matchId
 		}
 
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetMatchDetails/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetMatchDetails/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -32,7 +30,7 @@ class dotaWebAPI {
 			"language" : lang
 		}	
 
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetLeagueListing/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "/GetLeagueListing/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -49,7 +47,7 @@ class dotaWebAPI {
 			"key" : this.apiKey
 		}
 
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetLiveLeagueGames/v1/" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "/GetLiveLeagueGames/v1/" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -74,7 +72,7 @@ class dotaWebAPI {
 			"matches_requested" : matchesRequested,
 			"tournament_games_only" : tournamentGamesOnly
 		}
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetMatchHistory/v1/" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "/GetMatchHistory/v1/" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -92,7 +90,7 @@ class dotaWebAPI {
 			"start_at_match_seq_num" : startMatchSeqNum,
 			"matches_requested" : matchesRequested
 		}
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetMatchHistoryBySequenceNum/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "/GetMatchHistoryBySequenceNum/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -111,7 +109,7 @@ class dotaWebAPI {
 	// 		"date_min" : dateMin,
 	// 		"date_max" : dateMax
 	// 	}
-	// 	return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetScheduledLeagueGames/v1/" + query(parameters))
+	// 	return fetch(API_URL + MATCH_INTERFACE + "/GetScheduledLeagueGames/v1/" + query(parameters))
 	// 	.then(response => {
 	// 		if (response.ok) {
 	// 			return response.json()
@@ -129,7 +127,7 @@ class dotaWebAPI {
 			"start_at_team_id" : startTeamId,
 			"teams_requested" : teamsRequested
 		}
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetTeamInfoByTeamID/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "/GetTeamInfoByTeamID/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -149,7 +147,7 @@ class dotaWebAPI {
 			"hero_id" : heroId,
 			"time_frame" : timeFrame
 		}
-		return fetch(API_URL + MATCH_INTERFACE + APP_ID + "/GetTournamentPlayerStats/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "/GetTournamentPlayerStats/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -167,7 +165,7 @@ class dotaWebAPI {
 			"key" : this.apiKey,
 			"language" : lang
 		}
-		return fetch(API_URL + ECONOMY_INTERFACE + APP_ID + "/GetGameItems/v1" + query(parameters))
+		return fetch(API_URL + ECONOMY_INTERFACE + "/GetGameItems/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
@@ -185,7 +183,7 @@ class dotaWebAPI {
 			"language" : lang,
 			"itemizedonly" : ifItemized
 		}
-		return fetch(API_URL + ECONOMY_INTERFACE + APP_ID + "/GetHeroes/v1" + query(parameters))
+		return fetch(API_URL + ECONOMY_INTERFACE + "/GetHeroes/v1" + query(parameters))
 		.then(response => {
 			if (response.ok) {
 				return response.json()
