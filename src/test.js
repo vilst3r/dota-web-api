@@ -1,8 +1,7 @@
 import { assert, expect } from 'chai';
-
 import { dotaWebAPI } from './api';
 
-let api = new dotaWebAPI("1F72FF9BF1B0C1DF25A8CFA722DA0019");
+let api = new dotaWebAPI("272B58CE89E7A8FD84FE7D4B138966B4");
 
 // fetches a existing match from the api
 describe("getMatchDetails()", () => {
