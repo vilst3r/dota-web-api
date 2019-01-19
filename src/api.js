@@ -113,26 +113,26 @@ dotaWebAPI.prototype.getHeroes = (lang, ifItemized) => {
 }
 
 dotaWebAPI.prototype.getItemIconPath = (name) => {
-	let name = name.replace(/item_/gi, '') + '_';
+	name = name.replace(/item_/gi, '') + '_';
 	return 'http://cdn.dota2.com/apps/dota2/images/items/' + name + 'lg.png';
 }
 // sb.png, lg.png, full.png, vert.jpg
 dotaWebAPI.prototype.getHeroIconPath = (name, size) => {
-	let name = name.replace(/npc_dota_hero_/gi, '') + '_';
+	name = name.replace(/npc_dota_hero_/gi, '') + '_';
 	return 'http://cdn.dota2.com/apps/dota2/images/heroes/' + name + size;
 }
 
 module.exports = dotaWebAPI;
 
 // utility
-let query = function(parameters) {
+let query = (parameters) => {
 	let query = "?";
 	for (let property in parameters) {
 	    if (parameters.hasOwnProperty(property) && parameters[property] != undefined) {
 	    	query += (property + "=" + parameters[property] + "&") 
 	    }
 	}
-
+	
 	// remove the extra parameter symbol
 	query = query.substring (0, query.length - 1)
 	return query

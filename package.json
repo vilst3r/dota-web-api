@@ -1,15 +1,17 @@
 {
   "name": "dota2_web_api",
   "version": "1.2.2",
-  "description": "JS Wrapper for the DotA 2 Web API",
-  "main": "lib/index.js",
+  "description": "ES6 Wrapper for the DotA 2 Web API",
+  "main": "./src/index.js",
   "scripts": {
+    "start": "babel-node --presets es2015 src/api.js",
+    "build": "babel src -d lib",
     "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "test": "mocha ./lib/test"
   },
   "babel": {
     "presets": ["es2015"]
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vilst3r/dota2-web-api.git"
