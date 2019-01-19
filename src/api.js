@@ -1,22 +1,8 @@
 import { APP_ID } from '../config/config';
 import { API_URL, MATCH_INTERFACE, ECONOMY_INTERFACE } from '../config/urls';
 
-// utility
-var query = function(parameters) {
-	let query = "?";
-	for (let property in parameters) {
-	    if (parameters.hasOwnProperty(property) && parameters[property] != undefined) {
-	    	query += (property + "=" + parameters[property] + "&") 
-	    }
-	}
-
-	// remove the extra parameter symbol
-	query = query.substring (0, query.length - 1)
-	return query
-}
-
 // API Constructor
-var dotaWebAPI = function (apiKey) {
+let dotaWebAPI = function (apiKey) {
 	this.apiKey = apiKey;
 }
 
@@ -137,3 +123,17 @@ dotaWebAPI.prototype.getHeroIconPath = (name, size) => {
 }
 
 module.exports = dotaWebAPI;
+
+// utility
+let query = function(parameters) {
+	let query = "?";
+	for (let property in parameters) {
+	    if (parameters.hasOwnProperty(property) && parameters[property] != undefined) {
+	    	query += (property + "=" + parameters[property] + "&") 
+	    }
+	}
+
+	// remove the extra parameter symbol
+	query = query.substring (0, query.length - 1)
+	return query
+}
