@@ -1,4 +1,5 @@
 import "isomorphic-fetch";
+import { handleResponse, query } from './util';
 import { API_URL, MATCH_INTERFACE, ECONOMY_INTERFACE } from '../config/urls';
 
 class dotaWebAPI {
@@ -13,14 +14,7 @@ class dotaWebAPI {
 		}
 
 		return fetch(API_URL + MATCH_INTERFACE + "GetMatchDetails/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else {
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -31,14 +25,7 @@ class dotaWebAPI {
 		}	
 
 		return fetch(API_URL + MATCH_INTERFACE + "/GetLeagueListing/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else {
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -48,14 +35,7 @@ class dotaWebAPI {
 		}
 
 		return fetch(API_URL + MATCH_INTERFACE + "/GetLiveLeagueGames/v1/" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else {
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -73,14 +53,7 @@ class dotaWebAPI {
 			"tournament_games_only" : tournamentGamesOnly
 		}
 		return fetch(API_URL + MATCH_INTERFACE + "/GetMatchHistory/v1/" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else {
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -91,14 +64,7 @@ class dotaWebAPI {
 			"matches_requested" : matchesRequested
 		}
 		return fetch(API_URL + MATCH_INTERFACE + "/GetMatchHistoryBySequenceNum/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else{
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -128,14 +94,7 @@ class dotaWebAPI {
 			"teams_requested" : teamsRequested
 		}
 		return fetch(API_URL + MATCH_INTERFACE + "/GetTeamInfoByTeamID/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else{
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -148,14 +107,7 @@ class dotaWebAPI {
 			"time_frame" : timeFrame
 		}
 		return fetch(API_URL + MATCH_INTERFACE + "/GetTournamentPlayerStats/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else{
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -166,14 +118,7 @@ class dotaWebAPI {
 			"language" : lang
 		}
 		return fetch(API_URL + ECONOMY_INTERFACE + "/GetGameItems/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else{
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -184,14 +129,7 @@ class dotaWebAPI {
 			"itemizedonly" : ifItemized
 		}
 		return fetch(API_URL + ECONOMY_INTERFACE + "/GetHeroes/v1" + query(parameters))
-		.then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			else{
-				throw response.json()
-			}
-		})
+		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
@@ -209,18 +147,4 @@ class dotaWebAPI {
 
 module.exports = {
 	dotaWebAPI: dotaWebAPI
-};
-
-// utility
-let query = (parameters) => {
-	let query = "?";
-	for (let property in parameters) {
-	    if (parameters.hasOwnProperty(property) && parameters[property] != undefined) {
-	    	query += (property + "=" + parameters[property] + "&") 
-	    }
-	}
-	
-	// remove the extra parameter symbol
-	query = query.substring (0, query.length - 1)
-	return query
 }

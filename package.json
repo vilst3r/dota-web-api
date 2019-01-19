@@ -7,7 +7,7 @@
     "start": "babel-node --presets es2015 src/api.js",
     "build": "babel src -d lib",
     "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
-    "test": "mocha ./lib/test"
+    "test": "mocha ./lib/api.test"
   },
   "babel": {
     "presets": [
