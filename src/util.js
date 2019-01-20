@@ -8,7 +8,7 @@ const handleResponse = (response) => {
 }
 
 const query = (parameters) => (
-	'?' + Object.keys(parameters).map(key => 
+	Object.keys(parameters).map(key => 
 		parameters[key] ?
 			key + '=' + parameters[key]
 		:

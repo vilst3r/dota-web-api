@@ -31,7 +31,8 @@ describe("getLeagueListing()", () => {
 			expect(data.result.leagues[3]).to.have.property('description');
 			assert(data.result.leagues[3].description, "#DOTA_Item_desc_Wild_Cards_West")
 			done();
-		})	
+		})
+		.catch(error => console.log(error))	
 	})
 
 

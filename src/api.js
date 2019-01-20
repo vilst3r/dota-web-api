@@ -1,6 +1,6 @@
 import "isomorphic-fetch";
 import { handleResponse, query } from './util';
-import { API_URL, MATCH_INTERFACE, ECONOMY_INTERFACE } from '../config/urls';
+import { API_URL, STATIC_CDN, MATCH_INTERFACE, ECONOMY_INTERFACE } from '../config/urls';
 
 class dotaWebAPI {
 	constructor(apiKey) {
@@ -13,7 +13,7 @@ class dotaWebAPI {
 			"match_id": matchId
 		}
 
-		return fetch(API_URL + MATCH_INTERFACE + "GetMatchDetails/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetMatchDetails/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -24,7 +24,7 @@ class dotaWebAPI {
 			"language" : lang
 		}	
 
-		return fetch(API_URL + MATCH_INTERFACE + "/GetLeagueListing/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetLeagueListing/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -34,7 +34,7 @@ class dotaWebAPI {
 			"key" : this.apiKey
 		}
 
-		return fetch(API_URL + MATCH_INTERFACE + "/GetLiveLeagueGames/v1/" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetLiveLeagueGames/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -52,7 +52,7 @@ class dotaWebAPI {
 			"matches_requested" : matchesRequested,
 			"tournament_games_only" : tournamentGamesOnly
 		}
-		return fetch(API_URL + MATCH_INTERFACE + "/GetMatchHistory/v1/" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetMatchHistory/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -63,7 +63,7 @@ class dotaWebAPI {
 			"start_at_match_seq_num" : startMatchSeqNum,
 			"matches_requested" : matchesRequested
 		}
-		return fetch(API_URL + MATCH_INTERFACE + "/GetMatchHistoryBySequenceNum/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetMatchHistoryBySequenceNum/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -75,7 +75,7 @@ class dotaWebAPI {
 	// 		"date_min" : dateMin,
 	// 		"date_max" : dateMax
 	// 	}
-	// 	return fetch(API_URL + MATCH_INTERFACE + "/GetScheduledLeagueGames/v1/" + query(parameters))
+	// 	return fetch(API_URL + MATCH_INTERFACE + "GetScheduledLeagueGames/v1?" + query(parameters))
 	// 	.then(response => {
 	// 		if (response.ok) {
 	// 			return response.json()
@@ -93,7 +93,7 @@ class dotaWebAPI {
 			"start_at_team_id" : startTeamId,
 			"teams_requested" : teamsRequested
 		}
-		return fetch(API_URL + MATCH_INTERFACE + "/GetTeamInfoByTeamID/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetTeamInfoByTeamID/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -106,7 +106,7 @@ class dotaWebAPI {
 			"hero_id" : heroId,
 			"time_frame" : timeFrame
 		}
-		return fetch(API_URL + MATCH_INTERFACE + "/GetTournamentPlayerStats/v1" + query(parameters))
+		return fetch(API_URL + MATCH_INTERFACE + "GetTournamentPlayerStats/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -117,7 +117,7 @@ class dotaWebAPI {
 			"key" : this.apiKey,
 			"language" : lang
 		}
-		return fetch(API_URL + ECONOMY_INTERFACE + "/GetGameItems/v1" + query(parameters))
+		return fetch(API_URL + ECONOMY_INTERFACE + "GetGameItems/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
@@ -128,20 +128,20 @@ class dotaWebAPI {
 			"language" : lang,
 			"itemizedonly" : ifItemized
 		}
-		return fetch(API_URL + ECONOMY_INTERFACE + "/GetHeroes/v1" + query(parameters))
+		return fetch(API_URL + ECONOMY_INTERFACE + "GetHeroes/v1?" + query(parameters))
 		.then(response => handleResponse(response))
 		.catch(error => error)
 	}
 
 	getItemIconPath(name) {
 		name = name.replace(/item_/gi, '') + '_';
-		return 'http://cdn.dota2.com/apps/dota2/images/items/' + name + 'lg.png';
+		return STATIC_CDN + name + 'lg.png';
 	}
 
 	// sb.png, lg.png, full.png, vert.jpg
 	getHeroIconPath(name, size) {
 		name = name.replace(/npc_dota_hero_/gi, '') + '_';
-		return 'http://cdn.dota2.com/apps/dota2/images/heroes/' + name + size;
+		return STATIC_CDN + name + size;
 	}
 }
 
