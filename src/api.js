@@ -36,6 +36,7 @@ class dotaWebAPI {
 	}
 	
 	/**
+	 * Retrieves a list of all the tournaments in the game.
 	 * @deprecated Steam no longer supports this endpoint.
 	 * @param {string} [lang]  (optional - ISO639-1 char-set string)
 	 */
@@ -131,6 +132,7 @@ class dotaWebAPI {
 
 	/**
 	 * Provide a list of league games by date ranges
+	 * @deprecated Steam no longer supports this endpoint.
 	 * @param {number} [dateMin] (optional - uint32 Unix Timestamp)
 	 * @param {number} [dateMax] (optional - uint32 Unix Timestamp)
 	 */
