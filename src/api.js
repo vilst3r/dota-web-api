@@ -136,9 +136,7 @@ class dotaWebAPI {
 	 */
 	getScheduledLeagueGames(dateMin, dateMax) {
 		let parameters = {
-			"key" : this.apiKey,
-			"date_min" : dateMin,
-			"date_max" : dateMax
+			"key" : this.apiKey
 		}
 		return fetch(API_URL + MATCH_INTERFACE + "GetScheduledLeagueGames/v1?" + query(parameters))
 		.then(response => handleResponse(response))
