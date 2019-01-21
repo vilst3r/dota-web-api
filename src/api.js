@@ -225,7 +225,7 @@ class dotaWebAPI {
 	 */
 	getItemIconPath(name) {
 		name = name.replace(/item_/gi, '') + '_';
-		return STATIC_CDN + name + 'lg.png';
+		return STATIC_CDN + 'items/' + name + 'lg.png';
 	}
 
 	/**
@@ -235,7 +235,7 @@ class dotaWebAPI {
 	 */
 	getHeroIconPath(name, size) {
 		name = name.replace(/npc_dota_hero_/gi, '') + '_';
-		return STATIC_CDN + name + size;
+		return STATIC_CDN + 'heroes/' + name + size;
 	}
 }
 
