@@ -7,7 +7,7 @@ First get your personalised API key by following this link - http://steamcommuni
 
 From terminal/shell : 
 ``` 
-npm install --save dota2-web-api
+npm install --save dota2_web_api
 ```
 
 
