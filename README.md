@@ -1,21 +1,14 @@
 # dota2-web-api
 
-<div align="center">
-    <image width="100"
-    align="center"src="https://user-images.githubusercontent.com/10688285/100617536-c6d1f600-336e-11eb-8245-ae52c8ba4cae.png"/><br/>
-</div>
+[![NPM
+version](https://img.shields.io/npm/v/dota2_web_api)](https://www.npmjs.com/package/dota2_web_api)
+[![NPM total
+downloads](https://img.shields.io/npm/dt/dota2_web_api)](https://www.npmjs.com/package/dota2_web_api)
+[![Linux Build
+Status](https://img.shields.io/travis/com/vilst3r/dota2-web-api)](https://travis-ci.com/github/vilst3r/dota2-web-api)
 
-<p align="center">NodeJS Wrapper for the DotA 2 Web API written in ES6</p>
-<p align="center">For more info - http://wiki.teamfortress.com/wiki/WebAPI#Dota_2</p>
-
-<p align="center" style="margin: 0px auto; margin-top: 15px; max-width: 600px">
-    <a href="https://www.npmjs.com/package/dota2_web_api"><img
-        src="https://img.shields.io/npm/v/dota2_web_api"></a>
-    <a href="https://www.npmjs.com/package/dota2_web_api"><img
-        src="https://img.shields.io/npm/dt/dota2_web_api"></a>
-    <a href="https://travis-ci.com/github/vilst3r/dota2-web-api"><img
-        src="https://img.shields.io/travis/com/vilst3r/dota2-web-api"></a>
-</p>
+NodeJS Wrapper for the DotA 2 Web API written in ES6, -
+http://wiki.teamfortress.com/wiki/WebAPI#Dota_2.
 
 ## Usage
 First get your personalised API key by following this link -
