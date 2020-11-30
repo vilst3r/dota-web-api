@@ -1,22 +1,38 @@
 # dota2-web-api
 
-NodeJS Wrapper for the DotA 2 Web API written in ES6, - http://wiki.teamfortress.com/wiki/WebAPI#Dota_2.
+<div align="center">
+    <image width="100"
+    align="center"src="https://user-images.githubusercontent.com/10688285/100617536-c6d1f600-336e-11eb-8245-ae52c8ba4cae.png"/><br/>
+</div>
+
+<p align="center">NodeJS Wrapper for the DotA 2 Web API written in ES6</p>
+<p align="center">For more info - http://wiki.teamfortress.com/wiki/WebAPI#Dota_2</p>
+
+<p align="center" style="margin: 0px auto; margin-top: 15px; max-width: 600px">
+    <a href="https://www.npmjs.com/package/dota2_web_api"><img
+        src="https://img.shields.io/npm/v/dota2_web_api"></a>
+    <a href="https://www.npmjs.com/package/dota2_web_api"><img
+        src="https://img.shields.io/npm/dt/dota2_web_api"></a>
+    <a href="https://travis-ci.com/github/vilst3r/dota2-web-api"><img
+        src="https://img.shields.io/travis/com/vilst3r/dota2-web-api"></a>
+</p>
 
 ## Usage
-First get your personalised API key by following this link - http://steamcommunity.com/dev/apikey
+First get your personalised API key by following this link -
+http://steamcommunity.com/dev/apikey
 
-From terminal/shell : 
-``` 
+From terminal/shell :
+```
 npm install --save dota2_web_api
 ```
 
 
-In source file : 
+In source file :
 
 ```javascript
   let dotaWebAPI = require('dota2-web-api');
 
-  let api = new dotaWebAPI("Your Steam API key"); 
+  let api = new dotaWebAPI("Your Steam API key");
 ```
 
 
@@ -31,7 +47,9 @@ Parameters:
   .then(data => console.log(data.result));
 ```
 #### Get League Listing - Deprecated
-Note: The function responds by default with a english description of the leagues. Use this link  https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes to find appropriate values for the parameter
+Note: The function responds by default with a english description of the
+leagues. Use this link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes to
+find appropriate values for the parameter
 
 
 Parameters:
@@ -60,7 +78,7 @@ Parameters:
 ```javascript
   const accId = 128432259
   api.getMatchHistory(null, null, null, null, accId)
-  .then(data => 
+  .then(data =>
     data.result.matches.map((item, key) =>
       console.log(item) // printing matches of accId (default limit of 200 results)
     )
@@ -74,7 +92,7 @@ Parameters:
 const startSeqNum = 3000000
 const numOfMatches = 10
 api.getMatchHistoryBySequenceNumber(3000000, numOfMatches)
- .then(data => 
+ .then(data =>
     data.result.matches.map((item,key) =>
       console.log(item) // printing match details from id 3000000
     )
@@ -91,7 +109,7 @@ Parameters:
 #### Get Tournament Player stats
 Parameters:
   - accountId
-  - leagueId 
+  - leagueId
   - heroId (optional)
   - timeFrame (optional)
 ```javascript
@@ -108,14 +126,15 @@ Parameters:
   - lang
 ```javascript
   api.getItems()
-  .then(data => 
+  .then(data =>
     data.result.items.map((item, key) =>
       console.log(item)
     )
   );
 ```
 #### Get Item Icon
-Note: This returns a string url path and not a promise object. Use getItems() to get the correct item name parameter to use this
+Note: This returns a string url path and not a promise object. Use getItems() to
+get the correct item name parameter to use this
 
 Parameters:
   - name
@@ -124,7 +143,7 @@ Parameters:
   .then(data => {
     const item = data.result.items[0];
     const url = api.getItems(item.name)
-    
+
     item.icon_url = url;
   })
 ```
@@ -134,14 +153,16 @@ Parameters:
   - ifItemized (optional : 1 or 0 value)
 ```javascript
   api.getHeroes()
-  .then(data => 
+  .then(data =>
     data.result.heroes.map((item, key) =>
       console.log(item.name)
     )
   );
 ```
 #### Get Hero Icon
-Note: Similarly like getItemIcon(), use getHeroes() to get the correct hero name parameter to use this. Also returns a string url path rather than a promise object.
+Note: Similarly like getItemIcon(), use getHeroes() to get the correct hero name
+parameter to use this. Also returns a string url path rather than a promise
+object.
 
 Parameters:
   - name
@@ -151,7 +172,7 @@ Parameters:
   .then(data => {
     const hero = data.result.heroes[0];
     const url = api.getHeroIconPath(hero.name, "full.png")
-    
+
     hero.icon_url = url
   })
-```  
+```
