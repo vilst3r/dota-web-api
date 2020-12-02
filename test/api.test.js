@@ -236,25 +236,23 @@ describe('getTournamentPlayerStats()', () => {
 });
 
 describe('getItems()', () => {
-  it('should return a valid response containing the correct properties of ' +
-    'the JSON object', async () => {
-    const requestItem = ValidResources.requestItem;
-
+  it('should return a cached hashmap of item objects initialized from ' +
+     ' the constructor', async () => {
     try {
-      const response = await api.getItems();
+      await new Promise(r => setTimeout(r, 1000));
+      const items = await api.getItems();
 
-      assert.exists(response.result, ErrorMessages.missingProp);
-      assert.isAtLeast(Object.keys(response.result).length, 1,
-          ErrorMessages.missingResult);
-
-      assert.exists(response.result.items, ErrorMessages.missingProp);
-      assert.isArray(response.result.items, ErrorMessages.missingArrayType);
-      assert.isAtLeast(response.result.items.length, 1,
-          ErrorMessages.missingResult);
-
-      const items = response.result.items
-          .filter((item) => item.name === requestItem);
-      assert.isNotEmpty(items, ErrorMessages.missingMembers);
+      Object.values(items)
+            .map(i => {
+              assert.exists(i.id, ErrorMessages.missingProp);
+              assert.exists(i.name, ErrorMessages.missingProp);
+              assert.exists(i.cost, ErrorMessages.missingProp);
+              assert.exists(i.secret_shop, ErrorMessages.missingProp);
+              assert.exists(i.side_shop, ErrorMessages.missingProp);
+              assert.exists(i.recipe, ErrorMessages.missingProp);
+              assert.exists(i.localized_name, ErrorMessages.missingProp);
+              assert.exists(i.images, ErrorMessages.missingProp);
+            });
     } catch (error) {
       assert(false, error);
     }
@@ -262,25 +260,19 @@ describe('getItems()', () => {
 });
 
 describe('getHeroes()', () => {
-  it('should return a valid response containing the correct properties of ' +
-  'the JSON object', async () => {
-    const requestHero = ValidResources.requestHero;
-
+  it('should return a cached hashmap of hero objects initialized from ' +
+     ' the constructor', async () => {
     try {
-      const response = await api.getHeroes();
+      await new Promise(r => setTimeout(r, 1000));
+      const heroes = await api.getHeroes();
 
-      assert.exists(response.result, ErrorMessages.missingProp);
-      assert.isAtLeast(Object.keys(response.result).length, 1,
-          ErrorMessages.missingResult);
-
-      assert.exists(response.result.heroes, ErrorMessages.missingProp);
-      assert.isArray(response.result.heroes, ErrorMessages.missingArrayType);
-      assert.isAtLeast(response.result.heroes.length, 1,
-          ErrorMessages.missingResult);
-
-      const heroes = response.result.heroes
-          .filter((hero) => hero.name === requestHero);
-      assert.isNotEmpty(heroes, ErrorMessages.missingMembers);
+      Object.values(heroes)
+            .map(h => {
+              assert.exists(h.name, ErrorMessages.missingProp);
+              assert.exists(h.id, ErrorMessages.missingProp);
+              assert.exists(h.localized_name, ErrorMessages.missingProp);
+              assert.exists(h.images, ErrorMessages.missingProp);
+            });
     } catch (error) {
       assert(false, error);
     }
