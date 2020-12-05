@@ -24,14 +24,11 @@ In source file :
 
 ```javascript
   // server.js (NodeJS)
-  let DotaWebAPI = require('dota-web-api);
+  let DotaWebAPI = require('dota-web-api');
   let api = new DotaWebAPI("Your Steam API key");
 
   api.getHeroes().
   then(data => console.log(data))
-
-  // ES Module (React, Angular & etc)
-
 ```
 
 
