@@ -1,43 +1,54 @@
 {
-  "name": "dota2_web_api",
-  "version": "1.3.2",
-  "description": "ES6 Wrapper for the DotA 2 Web API",
-  "main": "./src/index.js",
+  "name": "dota-web-api",
+  "version": "1.3.3",
+  "description": "NodeJS Wrapper for the DotA 2 Web API",
+  "main": "./lib/index.js",
+  "files": [
+    "/lib/api.js",
+    "/lib/index.js"
+  ],
   "scripts": {
-    "start": "babel-node --presets es2015 src/api.js",
-    "build": "babel src -d lib",
-    "test": "mocha ./lib/api.test"
+    "build": "babel ./index.js src -d lib",
+    "clean": "rm -rf lib package",
+    "publish-preview": "npm pack && tar -xvzf *.tgz && rm -rf *.tgz",
+    "test": "babel ./index.js src test -d lib && mocha ./lib/api.test"
   },
   "babel": {
     "presets": [
-      "es2015"
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vilst3r/dota2-web-api.git"
+    "url": "git+https://github.com/vilst3r/dota-web-api.git"
   },
   "keywords": [
     "dota2",
+    "dota",
     "web",
     "api",
     "steam"
   ],
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
     "chai": "^4.1.2",
+    "eslint": "^7.14.0",
+    "eslint-config-google": "^0.14.0",
     "mocha": "^4.0.1"
   },
   "author": "Clifford Phan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vilst3r/dota2-web-api/issues"
+    "url": "https://github.com/vilst3r/dota-web-api/issues"
   },
-  "homepage": "https://github.com/vilst3r/dota2-web-api#readme",
+  "homepage": "https://github.com/vilst3r/dota-web-api#readme",
   "dependencies": {
-    "es6-promise": "^4.2.5",
-    "isomorphic-fetch": "^2.2.1"
+    "node-fetch": "^2.6.1"
   }
 }

@@ -1,7 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.log
+/lib
+/package
 
 # dependencies
 /node_modules
-/lib/
 /.pnp
 .pnp.js
+
+# trivial files
+*~
+*#

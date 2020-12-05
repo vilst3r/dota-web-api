@@ -1,3 +1,3 @@
-"use strict"
+const DotaWebAPI = require('./lib/api');
 
-module.exports = require('./lib/api');
+module.exports=  DotaWebAPI;
