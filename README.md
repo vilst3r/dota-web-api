@@ -1,9 +1,9 @@
 # dota-web-api
 
 [![NPM
-version](https://img.shields.io/npm/v/dota2_web_api)](https://www.npmjs.com/package/dota2_web_api)
+version](https://img.shields.io/npm/v/dota-web-api)](https://www.npmjs.com/package/dota-web-api)
 [![NPM total
-downloads](https://img.shields.io/npm/dt/dota2_web_api)](https://www.npmjs.com/package/dota2_web_api)
+downloads](https://img.shields.io/npm/dt/dota2_web_api)](https://www.npmjs.com/package/dota-web-api)
 [![Linux Build
 Status](https://img.shields.io/travis/com/vilst3r/dota-web-api)](https://travis-ci.com/github/vilst3r/dota-web-api)
 
