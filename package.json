@@ -8,10 +8,10 @@
     "/lib/index.js"
   ],
   "scripts": {
-    "build": "babel ./index.js src -d lib",
+    "build": "babel src -d lib",
     "clean": "rm -rf lib package",
     "publish-preview": "npm pack && tar -xvzf *.tgz && rm -rf *.tgz",
-    "test": "babel ./index.js src test -d lib && mocha ./lib/api.test"
+    "test": "babel src test -d lib && mocha ./lib/api.test"
   },
   "babel": {
     "presets": [
@@ -49,6 +49,7 @@
   },
   "homepage": "https://github.com/vilst3r/dota-web-api#readme",
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "node-fetch": "^2.6.1"
   }
 }

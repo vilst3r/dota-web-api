@@ -23,9 +23,15 @@ npm install --save dota-web-api
 In source file :
 
 ```javascript
-  let dotaWebAPI = require('dota-web-api);
+  // server.js (NodeJS)
+  let DotaWebAPI = require('dota-web-api);
+  let api = new DotaWebAPI("Your Steam API key");
 
-  let api = new dotaWebAPI("Your Steam API key");
+  api.getHeroes().
+  then(data => console.log(data))
+
+  // ES Module (React, Angular & etc)
+
 ```
 
 
