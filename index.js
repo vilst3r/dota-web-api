@@ -1,3 +1,3 @@
-const DotaWebAPI = require('api');
+const DotaWebAPI = require('./lib/api');
 
 module.exports=  DotaWebAPI;

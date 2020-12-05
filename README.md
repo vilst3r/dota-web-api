@@ -1,11 +1,11 @@
-# dota2-web-api
+# dota-web-api
 
 [![NPM
 version](https://img.shields.io/npm/v/dota2_web_api)](https://www.npmjs.com/package/dota2_web_api)
 [![NPM total
 downloads](https://img.shields.io/npm/dt/dota2_web_api)](https://www.npmjs.com/package/dota2_web_api)
 [![Linux Build
-Status](https://img.shields.io/travis/com/vilst3r/dota2-web-api)](https://travis-ci.com/github/vilst3r/dota2-web-api)
+Status](https://img.shields.io/travis/com/vilst3r/dota-web-api)](https://travis-ci.com/github/vilst3r/dota-web-api)
 
 NodeJS Wrapper for the DotA 2 Web API written -
 http://wiki.teamfortress.com/wiki/WebAPI#Dota_2.
@@ -16,14 +16,14 @@ http://steamcommunity.com/dev/apikey
 
 From terminal/shell :
 ```
-npm install --save dota2_web_api
+npm install --save dota-web-api
 ```
 
 
 In source file :
 
 ```javascript
-  let dotaWebAPI = require('dota2-web-api');
+  let dotaWebAPI = require('dota-web-api);
 
   let api = new dotaWebAPI("Your Steam API key");
 ```
