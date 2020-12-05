@@ -1,6 +1,6 @@
 {
   "name": "dota-web-api",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "NodeJS Wrapper for the DotA 2 Web API",
   "main": "./lib/index.js",
   "files": [
