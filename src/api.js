@@ -22,26 +22,26 @@ export class DotaWebAPI {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.heroes = {};
-    this.items = {}
+    this.items = {};
 
     // Load heroes & items data asynchronously
     this.getHeroes()
-        .then(data => data.result.heroes)
-        .then(heroes => heroes.map(hero => {
+        .then((data) => data.result.heroes)
+        .then((heroes) => heroes.map((hero) => {
           hero.localized_name = hero.name.replace(/npc_dota_hero_/gi, '');
           hero.images = {};
-          ['sb', 'lg', 'full'].map(size =>
+          ['sb', 'lg', 'full'].map((size) =>
             hero.images[size] =
-            `${STATIC_CDN}/heroes/${hero.localized_name}_${size}.png`
+            `${STATIC_CDN}/heroes/${hero.localized_name}_${size}.png`,
           );
           hero.images.vert =
-            `${STATIC_CDN}/heroes/${hero.localized_name}_vert.jpg`
+            `${STATIC_CDN}/heroes/${hero.localized_name}_vert.jpg`;
           this.heroes[hero.localized_name] = hero;
         }));
     this.getItems()
-        .then(data => data.result.items)
-        .then(items => items.map(item => {
-          item.localized_name = item.name.replace(/item_/gi, '')
+        .then((data) => data.result.items)
+        .then((items) => items.map((item) => {
+          item.localized_name = item.name.replace(/item_/gi, '');
           item.images = {};
           item.images.lg = `${STATIC_CDN}/items/${item.localized_name}_lg.png`;
           this.items[item.localized_name] = item;
@@ -62,7 +62,7 @@ export class DotaWebAPI {
 
     try {
       const response = await fetch(
-        `${API_URL}/${MATCH_INTERFACE}/GetMatchDetails/v1?${queryString}`);
+          `${API_URL}/${MATCH_INTERFACE}/GetMatchDetails/v1?${queryString}`);
       return handleResponse(response);
     } catch (error) {
       throw error;
@@ -163,7 +163,7 @@ export class DotaWebAPI {
 
     try {
       const response = fetch(
-        `${API_URL}/${MATCH_INTERFACE}/GetMatchHistory/v1?${queryString}`);
+          `${API_URL}/${MATCH_INTERFACE}/GetMatchHistory/v1?${queryString}`);
       return handleResponse(response);
     } catch (error) {
       throw error;
@@ -235,8 +235,8 @@ export class DotaWebAPI {
     const queryString = buildQueryString(parameters);
 
     try {
-      const response = fetch(
-    `${API_URL}/${MATCH_INTERFACE}/GetTeamInfoByTeamID/v1?${queryString}`);
+      const response = fetch(`${API_URL}/${MATCH_INTERFACE}` +
+      `/GetTeamInfoByTeamID/v1?${queryString}`);
       return handleResponse(response);
     } catch (error) {
       throw error;
@@ -357,7 +357,7 @@ async function handleResponse(response) {
  */
 function buildQueryString(parameters) {
   return Object.keys(parameters)
-               .filter((key) => parameters[key])
-               .map((key) => `${key}=${parameters[key]}`)
-               .join('&');
+      .filter((key) => parameters[key])
+      .map((key) => `${key}=${parameters[key]}`)
+      .join('&');
 }

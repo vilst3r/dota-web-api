@@ -1,3 +1,3 @@
-import { DotaWebAPI } from './api';
+import {DotaWebAPI} from './api';
 
 module.exports = DotaWebAPI;
