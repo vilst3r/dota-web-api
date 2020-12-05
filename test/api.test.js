@@ -239,20 +239,20 @@ describe('getItems()', () => {
   it('should return a cached hashmap of item objects initialized from ' +
      ' the constructor', async () => {
     try {
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise((r) => setTimeout(r, 1000));
       const items = await api.getItems();
 
       Object.values(items)
-            .map(i => {
-              assert.exists(i.id, ErrorMessages.missingProp);
-              assert.exists(i.name, ErrorMessages.missingProp);
-              assert.exists(i.cost, ErrorMessages.missingProp);
-              assert.exists(i.secret_shop, ErrorMessages.missingProp);
-              assert.exists(i.side_shop, ErrorMessages.missingProp);
-              assert.exists(i.recipe, ErrorMessages.missingProp);
-              assert.exists(i.localized_name, ErrorMessages.missingProp);
-              assert.exists(i.images, ErrorMessages.missingProp);
-            });
+          .map((i) => {
+            assert.exists(i.id, ErrorMessages.missingProp);
+            assert.exists(i.name, ErrorMessages.missingProp);
+            assert.exists(i.cost, ErrorMessages.missingProp);
+            assert.exists(i.secret_shop, ErrorMessages.missingProp);
+            assert.exists(i.side_shop, ErrorMessages.missingProp);
+            assert.exists(i.recipe, ErrorMessages.missingProp);
+            assert.exists(i.localized_name, ErrorMessages.missingProp);
+            assert.exists(i.images, ErrorMessages.missingProp);
+          });
     } catch (error) {
       assert(false, error);
     }
@@ -263,16 +263,16 @@ describe('getHeroes()', () => {
   it('should return a cached hashmap of hero objects initialized from ' +
      ' the constructor', async () => {
     try {
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise((r) => setTimeout(r, 1000));
       const heroes = await api.getHeroes();
 
       Object.values(heroes)
-            .map(h => {
-              assert.exists(h.name, ErrorMessages.missingProp);
-              assert.exists(h.id, ErrorMessages.missingProp);
-              assert.exists(h.localized_name, ErrorMessages.missingProp);
-              assert.exists(h.images, ErrorMessages.missingProp);
-            });
+          .map((h) => {
+            assert.exists(h.name, ErrorMessages.missingProp);
+            assert.exists(h.id, ErrorMessages.missingProp);
+            assert.exists(h.localized_name, ErrorMessages.missingProp);
+            assert.exists(h.images, ErrorMessages.missingProp);
+          });
     } catch (error) {
       assert(false, error);
     }
